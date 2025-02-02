@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Diabetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            margin-left: auto; /* Mengatur jarak agar lebih ke kiri */
+            margin-right: 10px; /* Mengurangi jarak dari kanan */
+        }
+
+        .navbar .menu-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .navbar .menu-item > a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .menu-item > a:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navbar .menu-item:hover .dropdown {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            height: 80vh;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            background-color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .section .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 300px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Deteksi Diabetes</div>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#">Menu</a>
+                <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="Deteksi.html">Deteksi</a>
+                    <a href="qna.html">QnA</a>
+                    <a href="history.html">History</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hero">
+        <h1>Selamat Datang di Deteksi Diabetes</h1>
+        <p>Temukan cara untuk mendeteksi dan memahami risiko diabetes Anda secara dini.</p>
+        <div class="cta-buttons">
+            <button onclick="location.href='Deteksi.html'">Mulai Deteksi</button>
+            <button onclick="location.href='#'">Pelajari Lebih Lanjut</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Tentang Kami</h2>
+        <p>Kami berdedikasi untuk menyediakan solusi kesehatan berbasis teknologi untuk membantu Anda memahami dan mengelola risiko diabetes Anda.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Visi Kami</h3>
+                <p>Menjadi platform kesehatan terpercaya untuk mendeteksi dan mencegah diabetes secara dini.</p>
+            </div>
+            <div class="card">
+                <h3>Misi Kami</h3>
+                <p>Meningkatkan kesadaran akan pentingnya kesehatan melalui teknologi yang mudah diakses.</p>
+            </div>
+            <div class="card">
+                <h3>Layanan Kami</h3>
+                <p>Menyediakan alat deteksi risiko diabetes yang mudah digunakan dan akurat.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Deteksi Diabetes. Semua Hak Dilindungi.
+    </footer>
+</body>
+</html>
