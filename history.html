@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Prediksi Diabetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+            margin-right: 10px; /* Adjusted space to the right */
+        }
+
+        .navbar .menu-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .navbar .menu-item > a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .menu-item > a:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .navbar .menu-item:hover .dropdown {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .history-table {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .history-table th, .history-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .history-table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .history-table tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        .detail-box {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .detail-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .detail-box p {
+            margin: 5px 0;
+        }
+
+        .input-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .input-table th, .input-table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .input-table th {
+            background-color: #f4f4f4;
+        }
+
+        /* Pop-up styles */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .popup-content button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .popup-content button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">History Prediksi Diabetes</div>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#">Menu</a>
+                <div class="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="Deteksi.html">Deteksi</a>
+                    <a href="qna.html">QnA</a>
+                    <a href="history.html">History</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Hasil Prediksi</th>
+                </tr>
+            </thead>
+            <tbody id="history-body">
+                
+            </tbody>
+        </table>
+
+        <div class="detail-box" id="detail-box">
+            <h3>Detail Submit</h3>
+            <p id="detail-name">Nama: -</p>
+            <p id="detail-result">Hasil: -</p>
+            <p id="detail-description">Deskripsi: -</p>
+            <table class="input-table" id="input-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data input akan ditambahkan di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h3>Detail Prediksi</h3>
+            <p id="popup-detail">Detail akan muncul di sini.</p>
+            <button onclick="closePopup()">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulasi data history
+        const historyData = [
+            { 
+                name: "John Doe", 
+                result: "Risiko rendah", 
+                detail: "Pasien memiliki risiko rendah berdasarkan data.", 
+                inputs: {
+                    "Gender": "Laki-laki",
+                    "Usia": 30,
+                    "Hypertension": 0,
+                    "Heart Disease": 0,
+                    "BMI": 23.5,
+                    "HbA1c": 5.6,
+                    "Blood Glucose": 110
+                }
+            },
+            { 
+                name: "Jane Smith", 
+                result: "Risiko tinggi", 
+                detail: "Pasien memiliki risiko tinggi berdasarkan data.", 
+                inputs: {
+                    "Gender": "Perempuan",
+                    "Usia": 45,
+                    "Hypertension": 1,
+                    "Heart Disease": 1,
+                    "BMI": 28.7,
+                    "HbA1c": 6.9,
+                    "Blood Glucose": 180
+                }
+            },
+            { 
+                name: "Alice Johnson", 
+                result: "Risiko sedang", 
+                detail: "Pasien memiliki risiko sedang berdasarkan data.", 
+                inputs: {
+                    "Gender": "Perempuan",
+                    "Usia": 35,
+                    "Hypertension": 0,
+                    "Heart Disease": 0,
+                    "BMI": 25.3,
+                    "HbA1c": 5.9,
+                    "Blood Glucose": 130
+                }
+            }
+        ];
+
+        // Menampilkan data ke tabel
+        const historyBody = document.getElementById("history-body");
+        const detailBox = {
+            name: document.getElementById("detail-name"),
+            result: document.getElementById("detail-result"),
+            description: document.getElementById("detail-description"),
+            inputTable: document.getElementById("input-table").querySelector("tbody")
+        };
+
+        historyData.forEach((item, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.result}</td>
+            `;
+            row.addEventListener("click", () => {
+                // Update detail box saat baris diklik
+                detailBox.name.textContent = `Nama: ${item.name}`;
+                detailBox.result.textContent = `Hasil: ${item.result}`;
+                detailBox.description.textContent = `Deskripsi: ${item.detail}`;
+
+                // Kosongkan tabel input sebelumnya
+                detailBox.inputTable.innerHTML = "";
+
+                // Tambahkan data input ke tabel
+                for (const [key, value] of Object.entries(item.inputs)) {
+                    const inputRow = document.createElement("tr");
+                    inputRow.innerHTML = `
+                        <td>${key}</td>
+                        <td>${value}</td>
+                    `;
+                    detailBox.inputTable.appendChild(inputRow);
+                }
+            });
+            historyBody.appendChild(row);
+        });
+
+        // Fungsi untuk menampilkan pop-up
+        function showPopup(detail) {
+            const popup = document.getElementById("popup");
+            const popupDetail = document.getElementById("popup-detail");
+            popupDetail.textContent = detail;
+            popup.style.display = "flex";
+        }
+
+        // Fungsi untuk menutup pop-up
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>
